@@ -2,7 +2,6 @@
 
 from tksheet import Sheet
 import tkinter as tk
-import sqlite3
 from student import *
 from student_adapter import *
 from db_adapter import *
@@ -30,9 +29,12 @@ class demo(tk.Tk):
 
         s.frame.grid(row=0,column=0, sticky = 'nswe')
         s.sheet.grid(row=1,column=0, sticky = 'nswe')
+    
     def click_event(s):
+        '''
+        Add new empty student record
+        '''
         s.sheet.insert_row(values=student_adapter(student(),s.db), redraw=True)
-        # s.sheet.refresh()
 
 mydb = db()
 # print([i for i in mydb.get_student()])
