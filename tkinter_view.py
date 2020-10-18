@@ -36,7 +36,10 @@ class demo(tk.Tk):
         '''
         s.sheet.insert_row(values=student_adapter(student(),s.db), redraw=True)
 
-mydb = db()
-# print([i for i in mydb.get_student()])
-app = demo(mydb)
-app.mainloop()
+def main():
+    mydb = db()
+    app = demo(mydb)
+    app.mainloop()
+
+if __name__ == '__main__':
+    main()
